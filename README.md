@@ -11,7 +11,6 @@ All the necessary resources will be created from scratch, including Vnet, subnet
 - Install Docker Engine in your desired host platform if not already. Refer [Install Docker Engine Server](https://docs.docker.com/engine/install/#server) for more details.
 - Azure CLI Credentials.
 - update terraform.tfvars flies with below parameters
-- copy updated terraform.tfvars inside terrform folder
 ```
 azure_stack_name="<short name for your setup>"
 azure_location="eastus"
@@ -30,15 +29,10 @@ azure_license_server="<IP or hostname of CyPerf license server>"
 A shell script 'pan_demo_setup.sh' will deploy entire topology and configure test for ready to run.
 
 ```
-terraform init
-terraform apply --auto-approve
-
-# pan_demo_setup.sh --deploy
+pan_demo_setup.sh --deploy
 ```
 # Destroy the setup
 
 ```
-terraform destory --auto-approve
-
-# pan_demo_setup.sh --destroy
+pan_demo_setup.sh --destroy
 ```
