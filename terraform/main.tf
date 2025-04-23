@@ -36,6 +36,7 @@ resource "azurerm_ssh_public_key" "generated_key" {
 
 locals {
   stackname_lowercase_hypn = replace(lower(var.azure_stack_name), "_", "-")
+  storage_account_name = replace(lower(local.stackname_lowercase_hypn), "-", "")
   current_timestamp = timestamp()
   numeric_timestamp = formatdate("YYYYMMDDHHmmss", local.current_timestamp)
   azure_allowed_cidr = var.azure_allowed_cidr
@@ -559,7 +560,8 @@ resource "azurerm_proximity_placement_group" "placement_group" {
 
 ##### create storage account #####
 resource "azurerm_storage_account" "pan_config_storage" {
-  name                     = "cystrg${local.numeric_timestamp}"
+  name                     = ${local.storage_account_name}60
+  # name                     = "cystrg${local.numeric_timestamp}"
   resource_group_name      = azurerm_resource_group.cyperfazuretest-rg.name
   location                 = var.azure_location
   account_tier             = "Standard"
