@@ -939,14 +939,14 @@ output "azfw_server_agent_detail" {
   }]
 }
 
-output "azfw_client_agent_detail_pan" {
+output "panfw_client_agent_detail" {
   value = [for x in module.clientagents-pan : {
     "name"       : x.agents_detail.name,
     "private_ip" : x.agents_detail.private_ip
   }]
 }
 
-output "azfw_server_agent_detail_pan" {
+output "panfw_server_agent_detail" {
   value = [for x in module.serveragents-pan : {
     "name"       : x.agents_detail.name,
     "private_ip" : x.agents_detail.private_ip
