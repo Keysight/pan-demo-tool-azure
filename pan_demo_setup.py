@@ -412,7 +412,7 @@ class Deployer(object):
         _, config_url = utils.load_configuration_file(args.config_file)
         session       = utils.create_session(config_url)
 
-        if 'panfw_detail' in output:
+        if 'azpanfw_detail' in output:
             pan_fw_client_gw = output['azpanfw_detail']['value']['panfw_cli_private_ip']
             pan_fw_server_gw = output['azpanfw_detail']['value']['panfw_srv_private_ip']
 
