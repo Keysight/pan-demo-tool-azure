@@ -73,7 +73,15 @@ locals {
     cyperfagent tag set Role=${local.srv_agent_tag_pan}
   EOF
   panfw_init_cli = <<-EOF
-    vmseries-bootstrap-azure-blob=${azurerm_storage_container.pan_config_container.name}
+    join(
+      ",",
+      [
+       "storage-account=${azurerm_storage_account.pan_config_storage.name}",
+       "access-key=${data.azurerm_storage_account.pan_config_storage_data.primary_access_key}",
+       "file-share=bootstrap",
+       "share-directory=None"
+      ],
+    )
   EOF
 }
 
@@ -554,7 +562,7 @@ resource "azurerm_proximity_placement_group" "placement_group" {
 
 ##### create storage account #####
 resource "azurerm_storage_account" "pan_config_storage" {
-  name                     = "cyperfstorage2025"
+  name                     = "cystrg${local.numeric_timestamp}"
   resource_group_name      = azurerm_resource_group.cyperfazuretest-rg.name
   location                 = var.azure_location
   account_tier             = "Standard"
@@ -565,28 +573,56 @@ resource "azurerm_storage_account" "pan_config_storage" {
   }
 }
 
-##### create container #####
-resource "azurerm_storage_container" "pan_config_container" {
-  name                  = "panfw-bootstrap"
+data "azurerm_storage_account" "pan_config_storage_data" {
+  name = azurerm_storage_account.pan_config_storage.name
+  resource_group_name = azurerm_resource_group.cyperfazuretest-rg.name
+}
+
+##### create storage share #####
+resource "azurerm_storage_share" "pan_config_storage_share" {
+  name                 = "bootstrap"
   storage_account_id    = azurerm_storage_account.pan_config_storage.id
-  container_access_type = "container"
+  quota                = 50
 }
 
-##### upload blobs #####
-resource "azurerm_storage_blob" "pan_config_file" {
-  name                   = "config/bootstrap.xml"
-  storage_account_name   = azurerm_storage_account.pan_config_storage.name
-  storage_container_name = azurerm_storage_container.pan_config_container.name
-  type                   = "Block"
-  source                 = "pan_config/bootstrap.xml"
+resource "azurerm_storage_share_directory" "pan_config_directory" {
+  name             = "config"
+  storage_share_id = azurerm_storage_share.pan_config_storage_share.url
 }
 
-resource "azurerm_storage_blob" "pan_config_file1" {
-  name                   = "config/init-cfg.txt"
-  storage_account_name   = azurerm_storage_account.pan_config_storage.name
-  storage_container_name = azurerm_storage_container.pan_config_container.name
-  type                   = "Block"
-  source                 = "pan_config/init-cfg.txt"
+resource "azurerm_storage_share_directory" "pan_config_directory1" {
+  name             = "content"
+  storage_share_id = azurerm_storage_share.pan_config_storage_share.url
+}
+
+resource "azurerm_storage_share_directory" "pan_config_directory2" {
+  name             = "license"
+  storage_share_id = azurerm_storage_share.pan_config_storage_share.url
+}
+
+resource "azurerm_storage_share_directory" "pan_config_directory3" {
+  name             = "software"
+  storage_share_id = azurerm_storage_share.pan_config_storage_share.url
+}
+
+resource "azurerm_storage_share_file" "pan_config_file" {
+  name             = "config/bootstrap.xml"
+  storage_share_id = azurerm_storage_share.pan_config_storage_share.url
+  source           = "pan_config/bootstrap.xml"
+
+  depends_on = [
+    azurerm_storage_share_directory.pan_config_directory
+  ]
+}
+
+resource "azurerm_storage_share_file" "pan_config_file1" {
+  name             = "config/init-cfg.txt"
+  storage_share_id = azurerm_storage_share.pan_config_storage_share.url
+  source           = "pan_config/init-cfg.txt"
+
+  depends_on = [
+    azurerm_storage_share_directory.pan_config_directory
+  ]
 }
 
 ######## pan fw Bootstrap role panrofile #######
@@ -852,6 +888,11 @@ module "azpanfw" {
 }
 
 ##### Output ######
+
+output "storage_account_primary_access_key" {
+  value = data.azurerm_storage_account.pan_config_storage_data.primary_access_key
+  sensitive = true
+}
 
 output "license_server" {
   value = var.azure_license_server
