@@ -645,6 +645,11 @@ resource "azurerm_role_assignment" "bootstrap_role_assignment" {
   principal_id   = azurerm_user_assigned_identity.bootstrap_identity.principal_id
   role_definition_name = azurerm_role_definition.bootstrap_role_definition.name
   scope          = azurerm_resource_group.cyperfazuretest-rg.id
+
+  depends_on = [
+    azurerm_role_definition.bootstrap_role_definition
+  ]
+
 }
 
 resource "azurerm_user_assigned_identity" "bootstrap_identity" {
