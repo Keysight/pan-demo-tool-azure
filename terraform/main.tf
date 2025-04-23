@@ -920,8 +920,8 @@ output "azpanfw_detail" {
     "name"                : module.azpanfw.panfw_detail.name,
     "public_ip"           : module.azpanfw.panfw_detail.public_ip,
     "private_ip"          : module.azpanfw.panfw_detail.private_ip,
-    "azfw_cli_private_ip" : module.azpanfw.panfw_detail.panfw_cli_private_ip,
-    "azfw_srv_private_ip" : module.azpanfw.panfw_detail.panfw_srv_private_ip
+    "panfw_cli_private_ip" : module.azpanfw.panfw_detail.panfw_cli_private_ip,
+    "panfw_srv_private_ip" : module.azpanfw.panfw_detail.panfw_srv_private_ip
   }
 }
 
