@@ -72,18 +72,15 @@ locals {
     bash /usr/bin/image_init_azure.sh ${module.mdw.mdw_detail.private_ip} --username "${var.controller_username}" --password "${var.controller_password}" --fingerprint "">> /home/cyperf/azure_image_init_log
     cyperfagent tag set Role=${local.srv_agent_tag_pan}
   EOF
-  panfw_init_cli = <<-EOF
-    join(
-      ",",
-      [
-       "storage-account=${azurerm_storage_account.pan_config_storage.name}",
-       "access-key=${data.azurerm_storage_account.pan_config_storage_data.primary_access_key}",
-       "file-share=bootstrap",
-       "share-directory=None"
-      ],
-    )
-  EOF
+
+  panfw_init_cli = join(",", [
+    "storage-account=${azurerm_storage_account.pan_config_storage.name}",
+    "access-key=${data.azurerm_storage_account.pan_config_storage_data.primary_access_key}",
+    "file-share=bootstrap",
+    "share-directory=None"
+  ])
 }
+
 
 resource "azurerm_virtual_network" "main_vnet" {
   name                = "${var.azure_stack_name}-main-vnet"
