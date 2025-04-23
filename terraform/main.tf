@@ -560,7 +560,7 @@ resource "azurerm_proximity_placement_group" "placement_group" {
 
 ##### create storage account #####
 resource "azurerm_storage_account" "pan_config_storage" {
-  name                     = ${local.storage_account_name}60
+  name                     = "${local.storage_account_name}60"
   # name                     = "cystrg${local.numeric_timestamp}"
   resource_group_name      = azurerm_resource_group.cyperfazuretest-rg.name
   location                 = var.azure_location
