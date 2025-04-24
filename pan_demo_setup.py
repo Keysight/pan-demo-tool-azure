@@ -429,9 +429,9 @@ class Deployer(object):
         utils.set_gateway (session, 'PAN-VM-FW-Server', pan_fw_server_gw)
         agents = {
             'PAN-VM-FW-Client': [agent['private_ip'] for agent in output['panfw_client_agent_detail']['value']],
-            'AZ-NW-FW-Client': [agent['private_ip'] for agent in output['azfw_client_agent_detail']['value']],
+            'AWS-NW-FW-Client': [agent['private_ip'] for agent in output['azfw_client_agent_detail']['value']],
             'PAN-VM-FW-Server': [agent['private_ip'] for agent in output['panfw_server_agent_detail']['value']],
-            'AZ-NW-FW-Server': [agent['private_ip'] for agent in output['azfw_server_agent_detail']['value']]
+            'AWS-NW-FW-Server': [agent['private_ip'] for agent in output['azfw_server_agent_detail']['value']]
         }
         utils.assign_agents (session, agents)
 
