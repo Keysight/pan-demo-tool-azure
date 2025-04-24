@@ -282,7 +282,7 @@ class CyPerfUtils(object):
             "-i", key_file,
             "-o", "MACS=hmac-sha2-512",
             f"{ssh_user}@{self.controller}",
-            "./switch-to-simple-ui.sh"
+            "sudo ./switch-to-simple-ui.sh"
         ]
         try:
             subprocess.run(patch_command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
