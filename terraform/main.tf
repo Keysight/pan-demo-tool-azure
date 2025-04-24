@@ -47,29 +47,32 @@ locals {
   cli_agent_tag_pan = "clientagent-panfw"
   srv_agent_tag_pan = "serveragent-panfw"
   mdw_init = <<-EOF
-    #! /bin/bash
+    #!/bin/bash
     echo "${tls_private_key.cyperf.public_key_openssh}" >> /home/cyperf/.ssh/authorized_keys
     chown cyperf: /home/cyperf/.ssh/authorized_keys
     chmod 0600 /home/cyperf/.ssh/authorized_keys
   EOF
 
   agent_init_cli = <<-EOF
-    #! /bin/bash
+    #!/bin/bash
     bash /usr/bin/image_init_azure.sh ${module.mdw.mdw_detail.private_ip} --username "${var.controller_username}" --password "${var.controller_password}" --fingerprint "">> /home/cyperf/azure_image_init_log
     cyperfagent tag set Role=${local.cli_agent_tag}
   EOF
+
   agent_init_srv = <<-EOF
-    #! /bin/bash
+    #!/bin/bash
     bash /usr/bin/image_init_azure.sh ${module.mdw.mdw_detail.private_ip} --username "${var.controller_username}" --password "${var.controller_password}" --fingerprint "">> /home/cyperf/azure_image_init_log
     cyperfagent tag set Role=${local.srv_agent_tag}
   EOF
+
   agent_init_cli_pan = <<-EOF
-    #! /bin/bash
+    #!/bin/bash
     bash /usr/bin/image_init_azure.sh ${module.mdw.mdw_detail.private_ip} --username "${var.controller_username}" --password "${var.controller_password}" --fingerprint "">> /home/cyperf/azure_image_init_log
     cyperfagent tag set Role=${local.cli_agent_tag_pan}
   EOF
+
   agent_init_srv_pan = <<-EOF
-    #! /bin/bash
+    #!/bin/bash
     bash /usr/bin/image_init_azure.sh ${module.mdw.mdw_detail.private_ip} --username "${var.controller_username}" --password "${var.controller_password}" --fingerprint "">> /home/cyperf/azure_image_init_log
     cyperfagent tag set Role=${local.srv_agent_tag_pan}
   EOF

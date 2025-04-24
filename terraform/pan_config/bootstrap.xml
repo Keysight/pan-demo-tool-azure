@@ -3,15 +3,15 @@
   <mgt-config>
     <users>
       <entry name="admin">
-        <phash>$5$aefohmni$mLL2WFtqPTzPpgH7Wvbdj.A6NXwsZJj/KNExGU1RUX6</phash>
+        <phash>*</phash>
         <permissions>
           <role-based>
             <superuser>yes</superuser>
           </role-based>
         </permissions>
       </entry>
-      <entry name="cyperf">
-        <phash>$5$xsptocmm$ksD75hi4HrxMDfxuFhquBmkxh2isrS5J.kQF31kMK9C</phash>
+      <entry name="bmyneni">
+        <phash>$5$wnhrdxvm$r5iCeDh6w0X4cQEaIOe.LQpMgiiGvPGEhWiie71tYc6</phash>
         <permissions>
           <role-based>
             <superuser>yes</superuser>
@@ -19,7 +19,7 @@
         </permissions>
       </entry>
       <entry name="__openconfig">
-        <phash>$5$smdnjekw$vL8N79aOSGOJXZ1g6WrNdsuMHoXeIft6KOqT1e59Al0</phash>
+        <phash>$5$hywhckuu$YOJ2THgK091PHk6L9MYFw3PzyW2vhSVFkDtYveaKTZ5</phash>
         <permissions>
           <role-based>
             <deviceadmin>
@@ -107,6 +107,7 @@
                     <static-ip/>
                   </upstream-nat>
                   <enable>no</enable>
+                  <ipv6-enable>no</ipv6-enable>
                 </sdwan-link-settings>
                 <lldp>
                   <enable>no</enable>
@@ -131,6 +132,7 @@
                     <static-ip/>
                   </upstream-nat>
                   <enable>no</enable>
+                  <ipv6-enable>no</ipv6-enable>
                 </sdwan-link-settings>
                 <lldp>
                   <enable>no</enable>
@@ -145,30 +147,6 @@
               </layer3>
             </entry>
           </ethernet>
-          <tunnel>
-            <units>
-              <entry name="tunnel.24"/>
-              <entry name="tunnel.25"/>
-              <entry name="tunnel.14"/>
-              <entry name="tunnel.27"/>
-              <entry name="tunnel.22"/>
-              <entry name="tunnel.10"/>
-              <entry name="tunnel.12"/>
-              <entry name="tunnel.19"/>
-              <entry name="tunnel.21"/>
-              <entry name="tunnel.23"/>
-              <entry name="tunnel.15"/>
-              <entry name="tunnel.16"/>
-              <entry name="tunnel.11"/>
-              <entry name="tunnel.18"/>
-              <entry name="tunnel.20"/>
-              <entry name="tunnel.26"/>
-              <entry name="tunnel.13"/>
-              <entry name="tunnel.17"/>
-              <entry name="tunnel.29"/>
-              <entry name="tunnel.28"/>
-            </units>
-          </tunnel>
         </interface>
         <profiles>
           <monitor-profile>
@@ -297,588 +275,6 @@
               </entry>
             </global-protect-app-crypto-profiles>
           </crypto-profiles>
-          <gateway>
-            <entry name="ike-gw-30.0.0.10">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.10</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.28">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.28</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.14">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.14</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.27">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.27</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.16">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.16</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.24">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.24</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.15">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.15</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.13">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.13</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.21">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.21</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.18">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.18</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.22">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.22</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.23">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.23</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.29">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.29</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.25">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.25</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.19">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.19</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.26">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.26</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.12">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.12</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.11">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.11</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.17">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.17</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-            <entry name="ike-gw-30.0.0.20">
-              <disabled>no</disabled>
-              <ipv6>no</ipv6>
-              <peer-address>
-                <dynamic/>
-              </peer-address>
-              <peer-id>
-                <type>ipaddr</type>
-                <id>30.0.0.20</id>
-              </peer-id>
-              <local-address>
-                <interface>ethernet1/1</interface>
-              </local-address>
-              <local-id>
-                <type>ipaddr</type>
-                <id>172.16.5.4</id>
-              </local-id>
-              <authentication>
-                <pre-shared-key>
-                  <key>-AQ==bL8/qexVnY65d+u5amqD7zKTW4w=sl0VBwyFQFi9OtPkOMlnLw==</key>
-                </pre-shared-key>
-              </authentication>
-              <protocol>
-                <version>ikev2</version>
-                <ikev1>
-                  <ike-crypto-profile>default</ike-crypto-profile>
-                </ikev1>
-              </protocol>
-            </entry>
-          </gateway>
         </ike>
         <qos>
           <profile>
@@ -934,7 +330,7 @@
               </bgp>
             </protocol>
           </entry>
-          <entry name="untrust-vr">
+          <entry name="VR1">
             <ecmp>
               <algorithm>
                 <ip-modulo/>
@@ -961,617 +357,10 @@
             </protocol>
             <interface>
               <member>ethernet1/1</member>
-              <member>tunnel.10</member>
-              <member>tunnel.11</member>
-              <member>tunnel.12</member>
-              <member>tunnel.13</member>
-              <member>tunnel.14</member>
-              <member>tunnel.15</member>
-              <member>tunnel.16</member>
-              <member>tunnel.17</member>
-              <member>tunnel.18</member>
-              <member>tunnel.19</member>
-              <member>tunnel.20</member>
-              <member>tunnel.21</member>
-              <member>tunnel.22</member>
-              <member>tunnel.23</member>
-              <member>tunnel.24</member>
-              <member>tunnel.25</member>
-              <member>tunnel.26</member>
-              <member>tunnel.27</member>
-              <member>tunnel.28</member>
-              <member>tunnel.29</member>
-            </interface>
-            <routing-table>
-              <ip>
-                <static-route>
-                  <entry name="route-for-10.x">
-                    <nexthop>
-                      <next-vr>trust-vr</next-vr>
-                    </nexthop>
-                    <bfd>
-                      <profile>None</profile>
-                    </bfd>
-                    <metric>10</metric>
-                    <destination>10.0.0.0/8</destination>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="route-for-172.16.x">
-                    <nexthop>
-                      <next-vr>trust-vr</next-vr>
-                    </nexthop>
-                    <bfd>
-                      <profile>None</profile>
-                    </bfd>
-                    <metric>10</metric>
-                    <destination>172.16.0.0/12</destination>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="route-for-192.168">
-                    <nexthop>
-                      <next-vr>trust-vr</next-vr>
-                    </nexthop>
-                    <bfd>
-                      <profile>None</profile>
-                    </bfd>
-                    <metric>10</metric>
-                    <destination>192.168.0.0/16</destination>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-26">
-                    <destination>50.0.0.26/32</destination>
-                    <interface>tunnel.26</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-20">
-                    <destination>50.0.0.20/32</destination>
-                    <interface>tunnel.20</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-21">
-                    <destination>50.0.0.21/32</destination>
-                    <interface>tunnel.21</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-25">
-                    <destination>50.0.0.25/32</destination>
-                    <interface>tunnel.25</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-17">
-                    <destination>50.0.0.17/32</destination>
-                    <interface>tunnel.17</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-14">
-                    <destination>50.0.0.14/32</destination>
-                    <interface>tunnel.14</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-22">
-                    <destination>50.0.0.22/32</destination>
-                    <interface>tunnel.22</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-23">
-                    <destination>50.0.0.23/32</destination>
-                    <interface>tunnel.23</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-24">
-                    <destination>50.0.0.24/32</destination>
-                    <interface>tunnel.24</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-13">
-                    <destination>50.0.0.13/32</destination>
-                    <interface>tunnel.13</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-28">
-                    <destination>50.0.0.28/32</destination>
-                    <interface>tunnel.28</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-15">
-                    <destination>50.0.0.15/32</destination>
-                    <interface>tunnel.15</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-10">
-                    <destination>50.0.0.10/32</destination>
-                    <interface>tunnel.10</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-29">
-                    <destination>50.0.0.29/32</destination>
-                    <interface>tunnel.29</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-27">
-                    <destination>50.0.0.27/32</destination>
-                    <interface>tunnel.27</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-16">
-                    <destination>50.0.0.16/32</destination>
-                    <interface>tunnel.16</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-18">
-                    <destination>50.0.0.18/32</destination>
-                    <interface>tunnel.18</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-19">
-                    <destination>50.0.0.19/32</destination>
-                    <interface>tunnel.19</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-12">
-                    <destination>50.0.0.12/32</destination>
-                    <interface>tunnel.12</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="remote-subnet-peer-11">
-                    <destination>50.0.0.11/32</destination>
-                    <interface>tunnel.11</interface>
-                    <metric>10</metric>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                </static-route>
-              </ip>
-            </routing-table>
-            <admin-dists>
-              <static>10</static>
-              <static-ipv6>10</static-ipv6>
-              <ospf-int>30</ospf-int>
-              <ospf-ext>110</ospf-ext>
-              <ospfv3-int>30</ospfv3-int>
-              <ospfv3-ext>110</ospfv3-ext>
-              <ibgp>200</ibgp>
-              <ebgp>20</ebgp>
-              <rip>120</rip>
-            </admin-dists>
-          </entry>
-          <entry name="trust-vr">
-            <ecmp>
-              <algorithm>
-                <ip-modulo/>
-              </algorithm>
-            </ecmp>
-            <protocol>
-              <bgp>
-                <routing-options>
-                  <graceful-restart>
-                    <enable>yes</enable>
-                  </graceful-restart>
-                </routing-options>
-                <enable>no</enable>
-              </bgp>
-              <rip>
-                <enable>no</enable>
-              </rip>
-              <ospf>
-                <enable>no</enable>
-              </ospf>
-              <ospfv3>
-                <enable>no</enable>
-              </ospfv3>
-            </protocol>
-            <interface>
               <member>ethernet1/2</member>
             </interface>
-            <routing-table>
-              <ip>
-                <static-route>
-                  <entry name="route-for-healthprobes">
-                    <path-monitor>
-                      <enable>no</enable>
-                      <failure-condition>any</failure-condition>
-                      <hold-time>2</hold-time>
-                    </path-monitor>
-                    <nexthop>
-                      <ip-address>1.0.0.2</ip-address>
-                    </nexthop>
-                    <bfd>
-                      <profile>None</profile>
-                    </bfd>
-                    <interface>ethernet1/2</interface>
-                    <metric>10</metric>
-                    <destination>168.63.129.16/32</destination>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                  <entry name="route-for-10.x">
-                    <interface>ethernet1/2</interface>
-                    <destination>10.0.0.0/8</destination>
-                    <nexthop>
-                      <ip-address>1.0.0.2</ip-address>
-                    </nexthop>
-                  </entry>
-                  <entry name="route-for-172.16.x">
-                    <interface>ethernet1/2</interface>
-                    <destination>172.16.0.0/12</destination>
-                    <nexthop>
-                      <ip-address>1.0.0.2</ip-address>
-                    </nexthop>
-                  </entry>
-                  <entry name="route-for-192.168">
-                    <interface>ethernet1/2</interface>
-                    <destination>192.168.0.0/16</destination>
-                    <nexthop>
-                      <ip-address>1.0.0.2</ip-address>
-                    </nexthop>
-                  </entry>
-                  <entry name="default">
-                    <nexthop>
-                      <next-vr>untrust-vr</next-vr>
-                    </nexthop>
-                    <bfd>
-                      <profile>None</profile>
-                    </bfd>
-                    <metric>10</metric>
-                    <destination>0.0.0.0/0</destination>
-                    <route-table>
-                      <unicast/>
-                    </route-table>
-                  </entry>
-                </static-route>
-              </ip>
-            </routing-table>
           </entry>
         </virtual-router>
-        <tunnel>
-          <ipsec>
-            <entry name="ipsec-16">
-              <tunnel-interface>tunnel.16</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.16"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-26">
-              <tunnel-interface>tunnel.26</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.26"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-10">
-              <tunnel-interface>tunnel.10</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.10"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-24">
-              <tunnel-interface>tunnel.24</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.24"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-17">
-              <tunnel-interface>tunnel.17</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.17"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-20">
-              <tunnel-interface>tunnel.20</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.20"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-27">
-              <tunnel-interface>tunnel.27</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.27"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-29">
-              <tunnel-interface>tunnel.29</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.29"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-25">
-              <tunnel-interface>tunnel.25</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.25"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-15">
-              <tunnel-interface>tunnel.15</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.15"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-19">
-              <tunnel-interface>tunnel.19</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.19"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-18">
-              <tunnel-interface>tunnel.18</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.18"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-23">
-              <tunnel-interface>tunnel.23</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.23"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-11">
-              <tunnel-interface>tunnel.11</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.11"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-21">
-              <tunnel-interface>tunnel.21</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.21"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-14">
-              <tunnel-interface>tunnel.14</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.14"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-13">
-              <tunnel-interface>tunnel.13</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.13"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-28">
-              <tunnel-interface>tunnel.28</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.28"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-22">
-              <tunnel-interface>tunnel.22</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.22"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-            <entry name="ipsec-12">
-              <tunnel-interface>tunnel.12</tunnel-interface>
-              <anti-replay>yes</anti-replay>
-              <auto-key>
-                <ike-gateway>
-                  <entry name="ike-gw-30.0.0.12"/>
-                </ike-gateway>
-                <ipsec-crypto-profile>default</ipsec-crypto-profile>
-              </auto-key>
-              <copy-tos>no</copy-tos>
-              <ipv6>no</ipv6>
-              <disabled>no</disabled>
-              <copy-flow-label>no</copy-flow-label>
-            </entry>
-          </ipsec>
-        </tunnel>
       </network>
       <deviceconfig>
         <system>
@@ -1606,7 +395,7 @@
             <threat-prevention>yes</threat-prevention>
             <region>americas</region>
           </device-telemetry>
-          <hostname>panazure</hostname>
+          <hostname>vmseries1</hostname>
         </system>
         <setting>
           <config>
@@ -1615,8 +404,8 @@
           <management>
             <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
             <initcfg>
-              <hostname>panazure</hostname>
-              <username>cyperf</username>
+              <hostname>vmseries1</hostname>
+              <username>bmyneni</username>
               <type>
                 <dhcp-client>
                   <send-hostname>yes</send-hostname>
@@ -1636,40 +425,16 @@
           <zone>
             <entry name="untrust">
               <network>
-                <layer3>
-                  <member>ethernet1/1</member>
-                </layer3>
+                <layer3/>
               </network>
             </entry>
             <entry name="trust">
               <network>
                 <layer3>
                   <member>ethernet1/2</member>
-                  <member>tunnel.10</member>
-                  <member>tunnel.11</member>
-                  <member>tunnel.12</member>
-                  <member>tunnel.13</member>
-                  <member>tunnel.14</member>
-                  <member>tunnel.15</member>
-                  <member>tunnel.16</member>
-                  <member>tunnel.17</member>
-                  <member>tunnel.18</member>
-                  <member>tunnel.19</member>
-                  <member>tunnel.20</member>
-                  <member>tunnel.21</member>
-                  <member>tunnel.22</member>
-                  <member>tunnel.23</member>
-                  <member>tunnel.24</member>
-                  <member>tunnel.25</member>
-                  <member>tunnel.26</member>
-                  <member>tunnel.27</member>
-                  <member>tunnel.28</member>
-                  <member>tunnel.29</member>
+                  <member>ethernet1/1</member>
                 </layer3>
-                <enable-packet-buffer-protection>no</enable-packet-buffer-protection>
               </network>
-              <enable-user-identification>no</enable-user-identification>
-              <enable-device-identification>no</enable-device-identification>
             </entry>
           </zone>
           <service/>
@@ -1704,73 +469,532 @@
               </rules>
             </nat>
             <security>
+              <rules/>
+            </security>
+            <default-security-rules>
               <rules>
-                <entry name="azure-healthprobe-allow" uuid="006341f7-75af-4290-9554-0fab39a82a18">
-                  <to>
-                    <member>any</member>
-                  </to>
-                  <from>
-                    <member>any</member>
-                  </from>
-                  <source>
-                    <member>168.63.129.16/32</member>
-                  </source>
-                  <destination>
-                    <member>any</member>
-                  </destination>
-                  <source-user>
-                    <member>any</member>
-                  </source-user>
-                  <category>
-                    <member>any</member>
-                  </category>
-                  <application>
-                    <member>any</member>
-                  </application>
-                  <service>
-                    <member>application-default</member>
-                  </service>
-                  <source-hip>
-                    <member>any</member>
-                  </source-hip>
-                  <destination-hip>
-                    <member>any</member>
-                  </destination-hip>
+                <entry name="intrazone-default" uuid="dfc711f1-83f4-44cb-b088-02aa4da7a6bc">
                   <action>allow</action>
-                  <log-start>no</log-start>
+                  <log-start>yes</log-start>
                   <log-end>yes</log-end>
+                  <profile-setting>
+                    <profiles>
+                      <url-filtering>
+                        <member>Cyperf_Azure</member>
+                      </url-filtering>
+                      <file-blocking>
+                        <member>strict file blocking</member>
+                      </file-blocking>
+                      <virus>
+                        <member>Cyperf-Azure</member>
+                      </virus>
+                      <spyware>
+                        <member>Cyperf_Azure</member>
+                      </spyware>
+                      <vulnerability>
+                        <member>Cyperf_Azure</member>
+                      </vulnerability>
+                      <wildfire-analysis>
+                        <member>Cyperf_Azure</member>
+                      </wildfire-analysis>
+                    </profiles>
+                  </profile-setting>
                 </entry>
               </rules>
-            </security>
+            </default-security-rules>
           </rulebase>
           <import>
             <network>
               <interface>
                 <member>ethernet1/1</member>
                 <member>ethernet1/2</member>
-                <member>tunnel.24</member>
-                <member>tunnel.14</member>
-                <member>tunnel.25</member>
-                <member>tunnel.27</member>
-                <member>tunnel.22</member>
-                <member>tunnel.10</member>
-                <member>tunnel.12</member>
-                <member>tunnel.19</member>
-                <member>tunnel.21</member>
-                <member>tunnel.23</member>
-                <member>tunnel.15</member>
-                <member>tunnel.16</member>
-                <member>tunnel.11</member>
-                <member>tunnel.18</member>
-                <member>tunnel.20</member>
-                <member>tunnel.26</member>
-                <member>tunnel.13</member>
-                <member>tunnel.17</member>
-                <member>tunnel.29</member>
-                <member>tunnel.28</member>
               </interface>
             </network>
           </import>
+          <profiles>
+            <virus>
+              <entry name="Cyperf-Azure">
+                <decoder>
+                  <entry name="http">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="http2">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="smtp">
+                    <action>reset-both</action>
+                    <wildfire-action>reset-both</wildfire-action>
+                    <mlav-action>reset-both</mlav-action>
+                  </entry>
+                  <entry name="imap">
+                    <action>reset-both</action>
+                    <wildfire-action>reset-both</wildfire-action>
+                    <mlav-action>reset-both</mlav-action>
+                  </entry>
+                  <entry name="pop3">
+                    <action>reset-both</action>
+                    <wildfire-action>reset-both</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="ftp">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                  <entry name="smb">
+                    <action>default</action>
+                    <wildfire-action>default</wildfire-action>
+                    <mlav-action>default</mlav-action>
+                  </entry>
+                </decoder>
+                <mlav-engine-filebased-enabled>
+                  <entry name="Windows Executables">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="PowerShell Script 1">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="PowerShell Script 2">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="Executable Linked Format">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="MSOffice">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="Shell">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="OOXML">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                  <entry name="MachO">
+                    <mlav-policy-action>enable</mlav-policy-action>
+                  </entry>
+                </mlav-engine-filebased-enabled>
+              </entry>
+            </virus>
+            <spyware>
+              <entry name="Cyperf_Azure">
+                <rules>
+                  <entry name="simple-critical">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <severity>
+                      <member>critical</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-high">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <severity>
+                      <member>high</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-medium">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <severity>
+                      <member>medium</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-informational">
+                    <action>
+                      <default/>
+                    </action>
+                    <severity>
+                      <member>informational</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-low">
+                    <action>
+                      <default/>
+                    </action>
+                    <severity>
+                      <member>low</member>
+                    </severity>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                </rules>
+                <botnet-domains>
+                  <lists>
+                    <entry name="default-paloalto-dns">
+                      <action>
+                        <sinkhole/>
+                      </action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                  </lists>
+                  <dns-security-categories>
+                    <entry name="pan-dns-sec-adtracking">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-cc">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-ddns">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-grayware">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-malware">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-parked">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-phishing">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-proxy">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                    <entry name="pan-dns-sec-recent">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
+                    </entry>
+                  </dns-security-categories>
+                  <sinkhole>
+                    <ipv4-address>pan-sinkhole-default-ip</ipv4-address>
+                    <ipv6-address>::1</ipv6-address>
+                  </sinkhole>
+                </botnet-domains>
+                <cloud-inline-analysis>yes</cloud-inline-analysis>
+                <mica-engine-spyware-enabled>
+                  <entry name="HTTP Command and Control detector">
+                    <inline-policy-action>reset-both</inline-policy-action>
+                  </entry>
+                  <entry name="HTTP2 Command and Control detector">
+                    <inline-policy-action>reset-both</inline-policy-action>
+                  </entry>
+                  <entry name="SSL Command and Control detector">
+                    <inline-policy-action>reset-both</inline-policy-action>
+                  </entry>
+                  <entry name="Unknown-TCP Command and Control detector">
+                    <inline-policy-action>reset-both</inline-policy-action>
+                  </entry>
+                  <entry name="Unknown-UDP Command and Control detector">
+                    <inline-policy-action>reset-both</inline-policy-action>
+                  </entry>
+                </mica-engine-spyware-enabled>
+              </entry>
+            </spyware>
+            <vulnerability>
+              <entry name="Cyperf_Azure">
+                <rules>
+                  <entry name="simple-client-critical">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>critical</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-client-high">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>high</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-client-medium">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>medium</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-client-informational">
+                    <action>
+                      <default/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>informational</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-client-low">
+                    <action>
+                      <default/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>low</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>client</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-critical">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>critical</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-high">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>high</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-medium">
+                    <action>
+                      <reset-both/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>medium</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-informational">
+                    <action>
+                      <default/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>informational</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                  <entry name="simple-server-low">
+                    <action>
+                      <default/>
+                    </action>
+                    <vendor-id>
+                      <member>any</member>
+                    </vendor-id>
+                    <severity>
+                      <member>low</member>
+                    </severity>
+                    <cve>
+                      <member>any</member>
+                    </cve>
+                    <threat-name>any</threat-name>
+                    <host>server</host>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
+                  </entry>
+                </rules>
+                <cloud-inline-analysis>yes</cloud-inline-analysis>
+                <mica-engine-vulnerability-enabled>
+                  <entry name="SQL Injection">
+                    <inline-policy-action>reset-both</inline-policy-action>
+                  </entry>
+                  <entry name="Command Injection">
+                    <inline-policy-action>reset-both</inline-policy-action>
+                  </entry>
+                </mica-engine-vulnerability-enabled>
+              </entry>
+            </vulnerability>
+            <url-filtering>
+              <entry name="Cyperf_Azure">
+                <local-inline-cat>yes</local-inline-cat>
+                <credential-enforcement>
+                  <mode>
+                    <disabled/>
+                  </mode>
+                  <log-severity>medium</log-severity>
+                  <block>
+                    <member>abused-drugs</member>
+                    <member>adult</member>
+                    <member>command-and-control</member>
+                    <member>gambling</member>
+                    <member>grayware</member>
+                    <member>hacking</member>
+                    <member>high-risk</member>
+                    <member>low-risk</member>
+                    <member>malware</member>
+                    <member>medium-risk</member>
+                    <member>phishing</member>
+                    <member>questionable</member>
+                    <member>ransomware</member>
+                    <member>scanning-activity</member>
+                    <member>weapons</member>
+                  </block>
+                </credential-enforcement>
+                <alert>
+                  <member>artificial-intelligence</member>
+                  <member>cryptocurrency</member>
+                  <member>low-risk</member>
+                  <member>medium-risk</member>
+                  <member>newly-registered-domain</member>
+                  <member>real-time-detection</member>
+                </alert>
+                <block>
+                  <member>abused-drugs</member>
+                  <member>adult</member>
+                  <member>command-and-control</member>
+                  <member>gambling</member>
+                  <member>grayware</member>
+                  <member>hacking</member>
+                  <member>high-risk</member>
+                  <member>malware</member>
+                  <member>phishing</member>
+                  <member>questionable</member>
+                  <member>ransomware</member>
+                  <member>scanning-activity</member>
+                  <member>weapons</member>
+                </block>
+              </entry>
+            </url-filtering>
+            <wildfire-analysis>
+              <entry name="Cyperf_Azure">
+                <rules>
+                  <entry name="default">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <file-type>
+                      <member>any</member>
+                    </file-type>
+                    <direction>both</direction>
+                    <analysis>public-cloud</analysis>
+                  </entry>
+                </rules>
+                <mica-engine-wildfire-rules>
+                  <entry name="Cyperf">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <file-type>
+                      <member>any</member>
+                    </file-type>
+                    <direction>both</direction>
+                    <action>block</action>
+                  </entry>
+                </mica-engine-wildfire-rules>
+                <cloud-inline-analysis>yes</cloud-inline-analysis>
+              </entry>
+            </wildfire-analysis>
+          </profiles>
         </entry>
       </vsys>
     </entry>
