@@ -23,6 +23,9 @@ resource "azurerm_network_interface" "az_mdw_interface" {
 
     tags = {
         Owner = var.azure_owner
+        ccoe-app = var.tag_ccoe-app
+        ccoe-group = var.tag_ccoe-group
+        UserID = var.tag_UserID
     }
 }
 
@@ -61,5 +64,8 @@ resource "azurerm_linux_virtual_machine" "az_mdw" {
 
     tags = {
         Owner = var.azure_owner
+        ccoe-app = var.tag_ccoe-app
+        ccoe-group = var.tag_ccoe-group
+        UserID = var.tag_UserID
     }
 }

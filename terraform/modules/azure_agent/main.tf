@@ -17,6 +17,9 @@ resource "azurerm_network_interface" "az_mgmt_interface" {
         Owner   = var.tags.azure_owner
         Project = var.tags.project_tag
         Options = var.tags.options_tag
+        ccoe-app = var.tags.tag_ccoe-app
+        ccoe-group = var.tags.tag_ccoe-group
+        UserID = var.tags.tag_UserID
     }
 }
 
@@ -35,6 +38,9 @@ resource "azurerm_network_interface" "az_cli_test_interface" {
         Owner   = var.tags.azure_owner
         Project = var.tags.project_tag
         Options = var.tags.options_tag
+        ccoe-app = var.tags.tag_ccoe-app
+        ccoe-group = var.tags.tag_ccoe-group
+        UserID = var.tags.tag_UserID
     }
 }
 
@@ -78,5 +84,8 @@ resource "azurerm_linux_virtual_machine" "az_cli_agent" {
         Owner   = var.tags.azure_owner
         Project = var.tags.project_tag
         Options = var.tags.options_tag
+        ccoe-app = var.tags.tag_ccoe-app
+        ccoe-group = var.tags.tag_ccoe-group
+        UserID = var.tags.tag_UserID
     }
 }

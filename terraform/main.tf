@@ -678,6 +678,9 @@ module "mdw" {
   azure_mdw_machine_type = var.azure_mdw_machine_type
   mdw_init               = local.mdw_init
   azure_location         = var.azure_location
+  tag_ccoe-app           = var.tag_ccoe-app
+  tag_ccoe-group         = var.tag_ccoe-group
+  tag_UserID             = var.tag_UserID
 }
 
 ####### Agents for azurefw #######
@@ -699,6 +702,9 @@ module "clientagents" {
     project_tag = local.project_tag,
     azure_owner = var.azure_owner,
     options_tag = local.options_tag
+    tag_ccoe-app = var.tag_ccoe-app
+    tag_ccoe-group = var.tag_ccoe-group
+    tag_UserID = var.tag_UserID
   }
   
   azure_stack_name       = var.azure_stack_name
@@ -726,6 +732,9 @@ module "serveragents" {
     project_tag = local.project_tag,
     azure_owner = var.azure_owner,
     options_tag = local.options_tag
+    tag_ccoe-app = var.tag_ccoe-app
+    tag_ccoe-group = var.tag_ccoe-group
+    tag_UserID = var.tag_UserID
   }
   
   azure_stack_name       = var.azure_stack_name
@@ -755,6 +764,9 @@ module "clientagents-pan" {
     project_tag = local.project_tag,
     azure_owner = var.azure_owner,
     options_tag = local.options_tag
+    tag_ccoe-app = var.tag_ccoe-app
+    tag_ccoe-group = var.tag_ccoe-group
+    tag_UserID = var.tag_UserID
   }
   
   azure_stack_name       = var.azure_stack_name
@@ -782,6 +794,9 @@ module "serveragents-pan" {
     project_tag = local.project_tag,
     azure_owner = var.azure_owner,
     options_tag = local.options_tag
+    tag_ccoe-app = var.tag_ccoe-app
+    tag_ccoe-group = var.tag_ccoe-group
+    tag_UserID = var.tag_UserID
   }
   
   azure_stack_name       = var.azure_stack_name
@@ -892,6 +907,9 @@ module "azpanfw" {
     panfw_init_cli = local.panfw_init_cli
     azure_location         = var.azure_location
     azure_panfw_machine_type = var.azure_panfw_machine_type
+    tag_ccoe-app           = var.tag_ccoe-app
+    tag_ccoe-group         = var.tag_ccoe-group
+    tag_UserID             = var.tag_UserID
 }
 
 ##### Output ######

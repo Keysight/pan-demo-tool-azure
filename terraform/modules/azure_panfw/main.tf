@@ -24,6 +24,9 @@ resource "azurerm_network_interface" "az_panfw_interface" {
 
     tags = {
         Owner = var.azure_owner
+        ccoe-app = var.tag_ccoe-app
+        ccoe-group = var.tag_ccoe-group
+        UserID = var.tag_UserID
     }
 }
 
@@ -40,6 +43,9 @@ resource "azurerm_network_interface" "az_panfw_cli_interface" {
 
     tags = {
         Owner = var.azure_owner
+        ccoe-app = var.tag_ccoe-app
+        ccoe-group = var.tag_ccoe-group
+        UserID = var.tag_UserID
     }
 }
 
@@ -56,6 +62,9 @@ resource "azurerm_network_interface" "az_panfw_srv_interface" {
 
     tags = {
         Owner = var.azure_owner
+        ccoe-app = var.tag_ccoe-app
+        ccoe-group = var.tag_ccoe-group
+        UserID = var.tag_UserID
     }
 }
 
@@ -99,5 +108,8 @@ resource "azurerm_linux_virtual_machine" "az_panfw" {
 
     tags = {
         Owner = var.azure_owner
+        ccoe-app = var.tag_ccoe-app
+        ccoe-group = var.tag_ccoe-group
+        UserID = var.tag_UserID
     }
 }

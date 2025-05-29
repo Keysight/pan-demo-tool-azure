@@ -21,6 +21,24 @@ variable "azure_owner" {
   description = "Owner of the stack"
 }
 
+variable "tag_ccoe-app" {
+  type = string
+  default = ""
+  description = "PAN mandetory tag ccoe-app"
+}
+
+variable "tag_ccoe-group" {
+  type = string
+  default = ""
+  description = "PAN mandetory tag ccoe-group"
+}
+
+variable "tag_UserID" {
+  type = string
+  default = ""
+  description = "PAN mandetory tag UserID"
+}
+
 variable "azure_auth_key" {
   type = string
   description = "The key used to SSH into VMs"
